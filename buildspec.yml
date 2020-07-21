@@ -8,13 +8,10 @@ phases:
       # Install dependencies needed for running tests
       - pip install -r requirements/common.txt
 
-  pre_build:
-    commands:
-      # Discover and run unit tests. For more information, see <https://docs.djangoproject.com/en/2.0/topics/testing/overview/>
-      - python manage.py test
-
-  post_build:
-    commands:
+build:
+ commands:
+   # Discover and run unit tests. For more information, see <https://docs.djangoproject.com/en/2.0/topics/testing/overview/>
+   - python manage.py test:
 
 reports: #New
   SurefireReports: # CodeBuild will create a report group called "SurefireReports".
